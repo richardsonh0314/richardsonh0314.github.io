@@ -4,76 +4,209 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patriots Dynasty - Championships and Legacy</title>
+    <!-- Custom Font Import -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
+        /* Custom Typography */
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+            font-family: 'Roboto', Arial, sans-serif;
+            font-weight: 300;
+            line-height: 1.7;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background: linear-gradient(135deg, #e8e8e8 0%, #f4f4f4 100%);
         }
+        
+        /* Enhanced Color Scheme */
+        :root {
+            --patriots-navy: #002244;
+            --patriots-red: #C60C30;
+            --patriots-silver: #B0B7BC;
+            --text-dark: #1a1a1a;
+            --text-light: #555;
+            --accent-hover: #8B0020;
+        }
+        
+        /* Custom Layout with Enhanced Margins/Padding */
         .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
+            max-width: 850px;
+            margin: 40px auto;
+            padding: 35px;
             background-color: white;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+            border-radius: 10px;
+            position: relative;
         }
+        
+        /* Decorative top stripe */
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--patriots-navy) 0%, var(--patriots-red) 50%, var(--patriots-navy) 100%);
+            border-radius: 10px 10px 0 0;
+        }
+        
         h2 {
-            color: #002244;
+            font-family: 'Bebas Neue', sans-serif;
+            color: var(--patriots-navy);
             text-align: center;
-            padding: 15px 0;
-            border-bottom: 2px solid #C60C30;
-            font-size: 22px;
+            padding: 20px 0;
+            border-bottom: 3px solid var(--patriots-red);
+            font-size: 32px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 10px;
         }
+        
         h3 {
-            color: #002244;
-            margin-top: 30px;
+            font-family: 'Bebas Neue', sans-serif;
+            color: var(--patriots-navy);
+            margin-top: 35px;
+            font-size: 24px;
+            letter-spacing: 1px;
+            position: relative;
+            padding-left: 15px;
         }
+        
+        /* Custom accent bar for h3 headers */
+        h3::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 24px;
+            background-color: var(--patriots-red);
+        }
+        
         .content {
-            margin: 30px 0;
+            margin: 35px 0;
             text-align: justify;
+            color: var(--text-dark);
         }
+        
         .content p {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            line-height: 1.8;
         }
+        
+        /* Enhanced image container with custom border treatment */
         .image-container {
             text-align: center;
-            margin: 30px 0;
+            margin: 40px 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #fafafa 0%, #f0f0f0 100%);
+            border-radius: 8px;
         }
+        
         img {
             max-width: 100%;
             height: auto;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
         }
+        
+        img:hover {
+            transform: scale(1.02);
+        }
+        
         .caption {
             font-style: italic;
-            color: #666;
-            margin-top: 10px;
+            color: var(--text-light);
+            margin-top: 12px;
             font-size: 14px;
+            font-weight: 400;
         }
+        
+        /* Custom styled lists with enhanced spacing */
         ul, ol {
-            background-color: #f9f9f9;
-            padding: 20px 40px;
-            border-left: 4px solid #C60C30;
-            margin: 20px 0;
+            background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);
+            padding: 25px 45px;
+            border-left: 5px solid var(--patriots-red);
+            margin: 25px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
+        
         li {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            color: var(--text-dark);
+            line-height: 1.6;
         }
+        
+        li strong {
+            color: var(--patriots-navy);
+            font-weight: 700;
+        }
+        
+        /* Enhanced navigation links with hover effects */
         .nav-link {
             display: inline-block;
-            margin: 20px 0;
-            padding: 10px 20px;
-            background-color: #002244;
+            margin: 25px 0;
+            padding: 12px 25px;
+            background: linear-gradient(135deg, var(--patriots-navy) 0%, #003366 100%);
             color: white;
             text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            box-shadow: 0 3px 10px rgba(0,34,68,0.3);
         }
+        
         .nav-link:hover {
-            background-color: #C60C30;
+            background: linear-gradient(135deg, var(--patriots-red) 0%, var(--accent-hover) 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(198,12,48,0.3);
+        }
+        
+        /* Custom contact section styling */
+        .contact-section {
+            background: linear-gradient(135deg, #f9f9f9 0%, #f5f5f5 100%);
+            padding: 25px;
+            border-left: 5px solid var(--patriots-red);
+            margin: 25px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .contact-section p {
+            margin: 8px 0;
+            color: var(--text-dark);
+        }
+        
+        .contact-section a {
+            color: var(--patriots-navy);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 400;
+        }
+        
+        .contact-section a:hover {
+            color: var(--patriots-red);
+            text-decoration: underline;
+        }
+        
+        /* Responsive design improvements */
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px;
+                padding: 25px;
+            }
+            
+            h2 {
+                font-size: 26px;
+            }
+            
+            ul, ol {
+                padding: 20px 30px;
+            }
         }
     </style>
 </head>
@@ -125,9 +258,9 @@
         </ul>
 
         <h3>Contact</h3>
-        <div style="background-color: #f9f9f9; padding: 20px; border-left: 4px solid #C60C30; margin: 20px 0;">
+        <div class="contact-section">
             <p><strong>Name:</strong> Hailey Richardson</p>
-            <p><strong>Email:</strong> <a href="mailto:richardson.h@northeastern.edu" style="color: #002244;">richardson.h@northeastern.edu</a></p>
+            <p><strong>Email:</strong> <a href="mailto:richardson.h@northeastern.edu">richardson.h@northeastern.edu</a></p>
         </div>
 
         <a href="index.html" class="nav-link">← Return to Home Page</a>
