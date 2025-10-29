@@ -4,55 +4,328 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New England Patriots Fan Page</title>
+    <!-- Custom Font Import -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
+        /* Custom Typography - Customization #1 */
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+            font-family: 'Roboto', Arial, sans-serif;
+            font-weight: 300;
+            line-height: 1.7;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background: linear-gradient(135deg, #e8e8e8 0%, #f4f4f4 100%);
+            min-height: 100vh;
         }
+        
+        /* Enhanced Color Scheme - Customization #2 */
+        :root {
+            --patriots-navy: #002244;
+            --patriots-red: #C60C30;
+            --patriots-silver: #B0B7BC;
+            --text-dark: #1a1a1a;
+            --text-light: #555;
+            --accent-hover: #8B0020;
+        }
+        
+        /* Custom Layout with Enhanced Margins/Padding - Customization #3 */
         .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
+            max-width: 850px;
+            margin: 40px auto;
+            padding: 35px;
             background-color: white;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+            border-radius: 10px;
+            position: relative;
         }
+        
+        /* Decorative top stripe */
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--patriots-navy) 0%, var(--patriots-red) 50%, var(--patriots-navy) 100%);
+            border-radius: 10px 10px 0 0;
+        }
+        
+        /* Custom animated header */
         h1 {
-            color: #002244;
+            font-family: 'Bebas Neue', sans-serif;
+            color: var(--patriots-navy);
             text-align: center;
-            padding: 20px 0;
-            border-bottom: 3px solid #C60C30;
+            padding: 25px 0;
+            border-bottom: 3px solid var(--patriots-red);
+            font-size: 36px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-top: 10px;
+            position: relative;
+            animation: fadeInDown 0.8s ease;
         }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Subtitle styling */
+        .subtitle {
+            text-align: center;
+            color: var(--text-light);
+            font-style: italic;
+            margin: -10px 0 30px 0;
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+        
+        /* Enhanced intro section */
         .intro {
-            margin: 30px 0;
+            margin: 35px 0;
             text-align: justify;
+            color: var(--text-dark);
+            position: relative;
+            padding: 25px;
+            background: linear-gradient(135deg, #fafafa 0%, #f7f7f7 100%);
+            border-radius: 8px;
+            border-left: 5px solid var(--patriots-navy);
         }
+        
         .intro p {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            line-height: 1.8;
+            animation: fadeIn 1s ease;
         }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        /* First paragraph with drop cap */
+        .intro p:first-child::first-letter {
+            float: left;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 58px;
+            line-height: 50px;
+            padding-right: 8px;
+            margin-top: 6px;
+            color: var(--patriots-red);
+        }
+        
+        /* Enhanced image container */
         .image-container {
             text-align: center;
-            margin: 30px 0;
+            margin: 40px 0;
+            padding: 25px;
+            background: linear-gradient(135deg, #fafafa 0%, #f0f0f0 100%);
+            border-radius: 8px;
+            position: relative;
         }
+        
+        /* Decorative corner accents */
+        .image-container::before,
+        .image-container::after {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border: 2px solid var(--patriots-red);
+        }
+        
+        .image-container::before {
+            top: 10px;
+            left: 10px;
+            border-right: none;
+            border-bottom: none;
+        }
+        
+        .image-container::after {
+            bottom: 10px;
+            right: 10px;
+            border-left: none;
+            border-top: none;
+        }
+        
         img {
             max-width: 100%;
             height: auto;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+        
+        img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+        }
+        
         .caption {
             font-style: italic;
-            color: #666;
-            margin-top: 10px;
+            color: var(--text-light);
+            margin-top: 15px;
             font-size: 14px;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Call-to-action section with custom styling */
+        .cta-section {
+            text-align: center;
+            margin: 50px 0 30px 0;
+            padding: 30px;
+            background: linear-gradient(135deg, var(--patriots-navy) 0%, #003366 100%);
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Decorative background pattern */
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255,255,255,0.03) 10px,
+                rgba(255,255,255,0.03) 20px
+            );
+            animation: slide 20s linear infinite;
+        }
+        
+        @keyframes slide {
+            from {
+                transform: translate(0, 0);
+            }
+            to {
+                transform: translate(50px, 50px);
+            }
+        }
+        
+        .cta-text {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 18px;
+            font-weight: 400;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Enhanced button with hover effects */
+        .cta-button {
+            display: inline-block;
+            padding: 15px 35px;
+            background: linear-gradient(135deg, var(--patriots-red) 0%, var(--accent-hover) 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 4px 15px rgba(198,12,48,0.4);
+            text-transform: uppercase;
+            font-family: 'Bebas Neue', sans-serif;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(198,12,48,0.5);
+            background: linear-gradient(135deg, var(--accent-hover) 0%, var(--patriots-red) 100%);
+        }
+        
+        /* Stats section */
+        .stats-section {
+            display: flex;
+            justify-content: space-around;
+            margin: 40px 0;
+            padding: 25px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .stat-number {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 36px;
+            color: var(--patriots-red);
+            display: block;
+            letter-spacing: 2px;
+        }
+        
+        .stat-label {
+            color: var(--text-light);
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 5px;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--text-light);
+            font-size: 14px;
+            border-top: 1px solid #e0e0e0;
+            margin-top: 30px;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px;
+                padding: 25px;
+            }
+            
+            h1 {
+                font-size: 28px;
+                letter-spacing: 2px;
+            }
+            
+            .stats-section {
+                flex-direction: column;
+            }
+            
+            .stat-item {
+                margin-bottom: 20px;
+            }
+            
+            .intro p:first-child::first-letter {
+                font-size: 48px;
+                line-height: 42px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Welcome to the New England Patriots Fan Zone</h1>
+        <p class="subtitle">Celebrating Excellence Since 1960</p>
         
         <div class="intro">
             <p>
@@ -68,19 +341,39 @@
             </p>
         </div>
         
-        <div class="image-container">
-            <img src="patriots.png" alt="New England Patriots Logo">
-            <p class="caption">The iconic New England Patriots logo</p>
+        <div class="stats-section">
+            <div class="stat-item">
+                <span class="stat-number">6</span>
+                <span class="stat-label">Super Bowl Wins</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">12</span>
+                <span class="stat-label">AFC Championships</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">22</span>
+                <span class="stat-label">Division Titles</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">1960</span>
+                <span class="stat-label">Established</span>
+            </div>
         </div>
         
-        <div style="text-align: center; margin: 40px 0;">
-            <a href="details.html" style="display: inline-block; padding: 12px 30px; background-color: #002244; color: white; text-decoration: none; border-radius: 5px; font-size: 16px; transition: background-color 0.3s;">
-                Learn More About the Dynasty →
+        <div class="image-container">
+            <img src="patriots.png" alt="New England Patriots Logo">
+            <p class="caption">The iconic New England Patriots logo - Symbol of Excellence</p>
+        </div>
+        
+        <div class="cta-section">
+            <p class="cta-text">Dive deeper into the Patriots' legendary history and achievements</p>
+            <a href="details.html" class="cta-button">
+                Explore the Dynasty →
             </a>
         </div>
-    </div>
-</body>
-</html>
+        
+        <div class="footer">
+            <p>© 2024 Patriots Fan Zone | Created with passion for the team</p>
         </div>
     </div>
 </body>
