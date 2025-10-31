@@ -1,2 +1,15 @@
 LINK TO WEBSITE: https://richardsonh0314.github.io/index.html
 
+CUSTOMIZATIONS:
+
+Custom Fonts: Uses "Bebas Neue" for headers and stats (sporty look) and "Roboto" for easy-to-read body text. The first paragraph starts with a large red letter for style.
+
+Team Colors: Uses Patriots colors throughout - navy blue (#002244), red (#C60C30), and silver (#B0B7BC). These appear in borders, buttons, and the striped bar at the top.
+
+Animations: The header slides down when the page loads, images grow slightly when you hover over them, and the background pattern in the blue section moves diagonally. The red button lifts up when hovered.
+
+Stats Display: Shows key numbers (6 Super Bowls, 12 AFC Championships, etc.) in a row with large red numbers and gray labels underneath.
+
+Visual Details: Adds corner brackets around the image, gradient backgrounds for sections, shadows behind elements for depth, and rounded corners on boxes. The site also adjusts for mobile screens.
+Special Touches: The top has a red-navy gradient stripe, sections have colored left borders, and the call-to-action section has a moving striped pattern behind it.
+
